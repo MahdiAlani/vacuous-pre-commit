@@ -1,0 +1,11 @@
+- id: vacuous
+  name: vacuous
+  description: Find Python tests that pass no matter what your code does
+  entry: vacuous check
+  language: python
+  # Only run when Python files are staged.
+  types: [python]
+  # vacuous works out for itself which files are tests, and resolves assertion
+  # helpers across a file, so it wants the tree rather than a list of paths.
+  # A whole repo scans in well under a second.
+  pass_filenames: false

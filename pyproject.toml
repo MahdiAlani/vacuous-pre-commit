@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vacuous-pre-commit"
+version = "0.1.0"
+description = "pre-commit hook for vacuous"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT OR Apache-2.0"
+license-files = ["LICENSE-MIT", "LICENSE-APACHE"]
+# The entire purpose of this package. Pinned exactly so `rev` in a
+# .pre-commit-config.yaml maps to one known version of the tool.
+dependencies = ["vacuous==0.1.0"]
+
+[project.urls]
+Repository = "https://github.com/MahdiAlani/vacuous-pre-commit"
+Homepage = "https://github.com/MahdiAlani/vacuous"
+
+# There is no Python code here, only a dependency. Without this, setuptools
+# goes looking for packages and fails.
+[tool.setuptools]
+py-modules = []
